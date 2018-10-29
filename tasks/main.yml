@@ -1,2 +1,22 @@
 ---
 # tasks file for ansible-openjdk/
+- name: add apt ppa support
+  apt:
+    name: software-properties-common
+    state:  present
+    update_cache: True
+  
+- name: add apt repository ppa
+  apt_repository:
+    repo: "ppa:openjdk-r/ppa"
+    state: present
+    update_cache: False
+
+- name: apt install package
+  apt:
+    name: "openjdk-{{jdk_version}}-jdk"
+    state: present
+    update_cache: True
+  
+- name: check java version
+  cmd: java -version
