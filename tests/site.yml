@@ -1,0 +1,6 @@
+---
+- hosts: all
+  roles:
+    - role: ansible-openjdk
+      vars:
+       jdk_version: 9
