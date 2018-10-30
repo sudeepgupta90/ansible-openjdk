@@ -19,4 +19,9 @@
     update_cache: True
   
 - name: check java version
-  cmd: java -version
+  shell: java -version
+  register: result
+
+- debug:
+    var: result
+
