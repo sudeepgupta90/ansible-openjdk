@@ -1,2 +1,3 @@
 ---
 # defaults file for ansible-openjdk/
+jdk_version: 8
